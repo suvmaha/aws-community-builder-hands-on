@@ -25,15 +25,24 @@ See [playbook.md](playbook.md) for the full step-by-step run guide.
 
 ## Cost
 
-No infrastructure to provision — Bedrock is a managed API, billed per token. A typical session (explain a service + quiz) costs a few cents.
+This tutorial has no infrastructure to provision. Here's why:
 
-| Nova Pro pricing (us-east-1) | Rate |
-|------------------------------|------|
-| Input | $0.0008 / 1K tokens |
-| Output | $0.0032 / 1K tokens |
-| Typical session (5K–10K tokens) | ~$0.02–$0.05 |
+- **Bedrock** — fully managed AWS service, call it like an API, nothing to create or destroy
+- **MCP server** — runs locally as a subprocess via `uvx`, exits when you quit
+- **Memory** — local JSON file
 
-The bill stops the moment you type `quit`.
+The only "cost" is per-call Bedrock token pricing (Nova Pro charges per input/output token). There's no cluster spinning, no EC2, nothing billable sitting idle between runs.
+
+Compare to EKS tutorials where a cluster runs 24/7 until torn down — that's why those need create/destroy/cost-check scripts. Here the bill stops the moment you type `quit`.
+
+**Nova Pro pricing (us-east-1, as of 2026):**
+
+```
+Input:  $0.0008 per 1K tokens
+Output: $0.0032 per 1K tokens
+
+A typical "Explain S3 + Quiz" session ≈ 5K–10K tokens ≈ $0.02–$0.05
+```
 
 ## What You Can Ask
 

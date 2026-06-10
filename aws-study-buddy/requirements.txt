@@ -1,0 +1,4 @@
+strands-agents
+strands-agents-bedrock
+mcp[cli]
+uv

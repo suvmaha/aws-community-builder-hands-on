@@ -1,0 +1,4 @@
+.venv/
+study_notes.json
+__pycache__/
+*.pyc

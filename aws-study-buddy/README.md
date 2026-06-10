@@ -23,6 +23,18 @@ Based on the original blog post and code by **Dineshraj Dhanapathy** (AWS Commun
 
 See [playbook.md](playbook.md) for the full step-by-step run guide.
 
+## Cost
+
+No infrastructure to provision — Bedrock is a managed API, billed per token. A typical session (explain a service + quiz) costs a few cents.
+
+| Nova Pro pricing (us-east-1) | Rate |
+|------------------------------|------|
+| Input | $0.0008 / 1K tokens |
+| Output | $0.0032 / 1K tokens |
+| Typical session (5K–10K tokens) | ~$0.02–$0.05 |
+
+The bill stops the moment you type `quit`.
+
 ## What You Can Ask
 
 | Category | Examples |
